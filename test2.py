@@ -5,8 +5,8 @@ import numpy as np
 from pathlib import Path
 
 # Output configuration
-OUTPUT_DIR = "generated_eds"
-NUM_IMAGES = 1500 # Number of images to generate
+OUTPUT_DIR = "generated_eds2"
+NUM_IMAGES = 750 # Number of images to generate
 START_NUMBER = 5000  # Starting number for file naming
 TEST_SPLIT_RATIO = 0.01 # 10% of images will be used for testing
 USE_YOLO_FORMAT = False  # Whether to save labels in YOLO format

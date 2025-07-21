@@ -6,8 +6,8 @@ import math
 import glob
 
 # Output configuration
-OUTPUT_DIR = "generated_eds"
-NUM_IMAGES = 500 # Number of images to generate
+OUTPUT_DIR = "generated_eds2"
+NUM_IMAGES = 250 # Number of images to generate
 TEST_SPLIT_RATIO = 0  # 20% of images will be used for testing
 USE_YOLO_FORMAT = False  # Whether to save labels in YOLO format
 YOLO_CLASS_ID = 0  # Class ID for text in YOLO format
@@ -568,9 +568,6 @@ def generate_text():
     return vertical_text, horizontal_text_segments
 
 def get_random_font():
-    """
-    Get a random font from the available fonts
-    """
     if FONTS[0] == "default":
         return ImageFont.load_default()
         
@@ -894,15 +891,6 @@ def process_bounding_boxes_for_format(bounding_boxes):
     return processed_boxes
 
 def draw_rectangle(draw, x1, x2, y, height, structure_width, image, prev_rect_texts=None):
-    """
-    Draw a rectangle between x1 and x2, centered vertically on y
-    Uses different line widths for horizontal and vertical lines
-    Includes line-based arrows at the ends of horizontal lines, pointing outward
-    structure_width: width of the entire structure for arrow size calculation
-    image: the main image to paste rotated text onto
-    prev_rect_texts: list of text boxes from the previous rectangle for overlap checking
-    Returns: list of text boxes for this rectangle
-    """
     half_height = height // 2
     
     # Calculate points
